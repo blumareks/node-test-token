@@ -1,0 +1,205 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "my open api json ",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "https://the fully qualified address here"
+    }
+  ],
+  "paths": {
+    "/startWebSession": {
+      "get": {
+        "summary": "startWebSession",
+        "description": "startWebSession",
+        "operationId": "startWebSession",
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful authentication",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string",
+                      "description": "Bearer token for authentication"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/player/{clientId}": {
+        "get": {
+          "summary": "player",
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "clientId",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "description": "numeric Id of a player to get"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "description": "Bearer token for API access",
+              "schema": {
+                "type": "string"
+              }
+            }
+
+          ],
+          "description": "player",
+          "operationId": "player",
+          "responses": {
+            "200": {
+              "description": "success",
+              "content": {
+                "application/json": { 
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "name":{
+                          "type":"string"
+                      },
+                      "gender":{
+                          "type":"string"
+                      },
+                      "age":{
+                          "type":"integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/playerInfo/{clientId}": {
+        "get": {
+          "summary": "player info",
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "clientId",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "description": "numeric Id of a player to get"
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "description": "Bearer token for API access",
+              "schema": {
+                "type": "string"
+              }
+            }
+
+          ],
+          "description": "player",
+          "operationId": "player",
+          "responses": {
+            "200": {
+              "description": "success",
+              "content": {
+                "application/json": { 
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "trackingID":{
+                          "type":"string"
+                      },
+                      "statType":{
+                        "type":"string"
+                      },
+                      "startDatetime":{
+                        "type":"string"
+                      },
+                      "startDateTimeOffset":{
+                        "type":"string"
+                      },
+                      "endDatetime":{
+                        "type":"string"
+                      },
+                      "endDateTimeOffset":{
+                        "type":"string"
+                      },
+                      "gamingDate":{
+                        "type":"string"
+                      },
+                      "machineID":{
+                        "type":"string"
+                      },
+                      "shiftID":{
+                        "type":"string"
+                      },
+
+                      "timePlayed":{
+                          "type":"integer"
+                      },
+                      "denom":{
+                        "type":"integer"
+                      },
+                      "cashIn":{
+                        "type":"integer"
+                      },
+                      "promoPlay":{
+                          "type":"integer"
+                      },
+                      "moneyPlay":{
+                        "type":"integer"
+                      },
+                      "cashOut":{
+                        "type":"integer"
+                      },
+                      "jackpot":{
+                          "type":"integer"
+                      },
+                      "theoWin":{
+                        "type":"integer"
+                    }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  },
+  "tags": []
+}
