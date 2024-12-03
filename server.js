@@ -81,7 +81,7 @@ app.get('/playerInfo/:id', (req, res) => {
       });
 
     // Send the POST data
-    res.write(postData);
+    res.json(postData);
     res.end();
 });
 
@@ -151,13 +151,13 @@ app.get('/PlayerById/:id', (req, res) => {
   });
 
   // Send the POST data
-  res.write(postData);
+  res.json(postData);
   res.end();
 });
 
 
 // Post player information
-app.get('/playerInfo_Get/:id', (req, res) => {
+app.get('/PlayerInfo_Get/:id', (req, res) => {
 
   const headerToken = req.get('token');
   const id = parseInt(req.params.id);
@@ -295,16 +295,16 @@ app.get('/playerInfo_Get/:id', (req, res) => {
   });
 
   // Send the POST data
-  res.write(postData);
+  res.json(postData);
   res.end();
 });
 
 // Post player information
-app.get('/playerInfo_AccountsById/:id', (req, res) => {
+app.get('/PlayerInfo_AccountsById/:id', (req, res) => {
 
   const headerToken = req.get('token');
   const id = parseInt(req.params.id);
-  console.log("/playerInfo_AccountsById/:id "+ id)
+  console.log("/PlayerInfo_AccountsById/:id "+ id)
 
   if(!headerToken || !ValidateToken(headerToken)) {
       res.status(403).json({ error: 'Not authorised, no token supplied' });
@@ -358,12 +358,12 @@ app.get('/playerInfo_AccountsById/:id', (req, res) => {
   });
 
   // Send the POST data
-  res.write(postData);
+  res.json(postData);
   res.end();
 });
 
 // Post player information
-app.get('/playerInfo_Accounts/:id', (req, res) => {
+app.get('/PlayerInfo_Accounts/:id', (req, res) => {
 
   const headerToken = req.get('token');
   const id = parseInt(req.params.id);
@@ -479,6 +479,6 @@ app.get('/playerInfo_Accounts/:id', (req, res) => {
   ]);
 
   // Send the POST data
-  res.write(postData);
+  res.json(postData);
   res.end();
 });
