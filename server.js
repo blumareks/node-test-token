@@ -60,7 +60,8 @@ app.get('/playerInfo/:id', (req, res) => {
         res.status(403).json({ error: 'Not authorised, no token supplied' });
     }
 
-    const postData = JSON.stringify({
+    const postData = //JSON.stringify(
+      {
         trackingID: "200234",
         statType: "info",
         startDatetime: "2024-11-04T16:39:40.022Z",
@@ -78,7 +79,8 @@ app.get('/playerInfo/:id', (req, res) => {
         cashOut: 0,
         jackpot: 0,
         theoWin: 0,
-      });
+      };
+    //);
 
     // Send the POST data
     res.json(postData);
@@ -126,7 +128,8 @@ app.get('/PlayerById/:id', (req, res) => {
  */
 
 
-  const postData = JSON.stringify({
+  const postData = //JSON.stringify(
+  {
     "PlayerID": "177224",
     "PlayerProfile": {
       "FirstName": "EnrlORDS",
@@ -148,7 +151,8 @@ app.get('/PlayerById/:id', (req, res) => {
       "ExternalSystemId": null,
       "SourceCode": "ORCLClient"
     }
-  });
+  };
+//);
 
   // Send the POST data
   res.json(postData);
@@ -173,7 +177,8 @@ app.get('/PlayerInfo_Get/:id', (req, res) => {
 
 */
 
-  const postData = JSON.stringify({
+  const postData = //JSON.stringify(
+  {
     "Items": [    
       {
         "PlayerID": "177297",
@@ -292,7 +297,8 @@ app.get('/PlayerInfo_Get/:id', (req, res) => {
       },
     ],
     "NextPageLink": "https://my.secret.website.com/ATI.nConnectOasis/api/v1/PlayerInfo?$skip=176276"
-  });
+  };
+//);
 
   // Send the POST data
   res.json(postData);
@@ -337,7 +343,8 @@ app.get('/PlayerInfo_AccountsById/:id', (req, res) => {
 }
  */
 
-  const postData = JSON.stringify({
+  const postData = //JSON.stringify(
+  {
     "PlayerAccount": [
       {
         "AccountId": "654480",
@@ -355,7 +362,8 @@ app.get('/PlayerInfo_AccountsById/:id', (req, res) => {
         "AccountBalance": 0
       }
     ]
-  });
+  };
+//);
 
   // Send the POST data
   res.json(postData);
@@ -430,7 +438,8 @@ app.get('/PlayerInfo_Accounts/:id', (req, res) => {
 
 
 
-  const postData = JSON.stringify([
+  const postData = //JSON.stringify(
+  [
     {
       "PlayerAccount": [
         {
@@ -476,7 +485,8 @@ app.get('/PlayerInfo_Accounts/:id', (req, res) => {
         }
       ]
     }
-  ]);
+  ];
+//);
 
   // Send the POST data
   res.json(postData);
